@@ -1,30 +1,22 @@
-{%set name = "agate-remote" %}
 {%set version = "0.2.0" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "06a3ce50634ed3e2893139469dddc470ade65f448cd65e2c9eca65a8d36109a2" %}
-{%set build_num = "0" %}
 
 package:
-  name: {{ name|lower }}
+  name: agate-remote
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/a/agate-remote/agate-remote-{{ version }}.tar.gz
+  sha256: 06a3ce50634ed3e2893139469dddc470ade65f448cd65e2c9eca65a8d36109a2
 
 build:
+  number: 0
   noarch: python
-  number: {{ build_num }}
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - agate >=1.5.0
