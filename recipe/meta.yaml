@@ -5,24 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/agate-remote/agate-remote-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/agate-remote/agate-remote-{{ version }}.tar.gz
   sha256: 746c7da09744696a56a95bb1d1d7c8c9d8cb3bd40d6c40cede371e0e749442fb
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - agate >=1.5.0
     - requests >=2.9.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - agateremote
 
