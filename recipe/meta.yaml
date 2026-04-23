@@ -1,12 +1,12 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.3" %}
 
 package:
   name: agate-remote
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/agate-remote/agate-remote-{{ version }}.tar.gz
-  sha256: 746c7da09744696a56a95bb1d1d7c8c9d8cb3bd40d6c40cede371e0e749442fb
+  url: https://pypi.org/packages/source/a/agate-remote/agate_remote-{{ version }}.tar.gz
+  sha256: 8cd995eb6b8b135945e6096d8d683e21ae80f7fbe48330e879cbf0bff65c2827
 
 build:
   number: 0
